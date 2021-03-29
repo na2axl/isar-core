@@ -1,4 +1,4 @@
-name: Buils
+name: Builds
 
 on: [push, pull_request]
 
@@ -47,6 +47,6 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: ndk
-          args: -t ${{ matrix.arch }} -p ${{ env.NDK_LTS_VER }} -- build --verbose --features ffi
+          args: -t ${{ matrix.arch }} -p ${{ env.NDK_LTS_VER }} -- build --verbose
         env:
           ANDROID_NDK_HOME: ${{ github.workspace }}/android-ndk-r${{ env.NDK_LTS_VER  }}
